@@ -1,3 +1,11 @@
+#servo GPIO pins
+#yellow servo wire to pin 11
+#orange (middle) wire to pin 4
+#brown wire to pin 6 
+
+
+
+
 import RPi.GPIO as GPIO
 import time
 
@@ -13,7 +21,7 @@ class Number:
 # hits the A-Button, the input is checked.
 
 
-# These are the GPIO pin numbers where the
+# These are the GPIO pin numbers (for the keypad) where the
 # lines of the keypad matrix are connected
 L1 = 29
 L2 = 31
@@ -101,20 +109,20 @@ def checkSpecialKeys():
             print("Code correct!")
             # if door unlocked, lock it. otherwise, door locked, so unlock it
             if(locked.num == 0):
-                servo1.ChangeDutyCycle(9)
+                time.sleep(5)
+                servo1.ChangeDutyCycle(8)
                 time.sleep(1)
                 servo1.start(0)
                 locked.num = 1
                 print("Door locked")
             else:
-                servo1.ChangeDutyCycle(6)
+                servo1.ChangeDutyCycle(6.5)
                 time.sleep(1)
                 servo1.start(0)
                 locked.num = 0
                 print("Door unlocked")
         else:
             print("Incorrect code!")
-            # TODO: Sound an alarm, send an email, etc.
         pressed = True
 
     GPIO.output(L3, GPIO.LOW)
