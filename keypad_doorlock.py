@@ -4,7 +4,9 @@
 #brown wire to pin 6
 
 
-#Code Reference - https://maker.pro/raspberry-pi/tutorial/how-to-use-a-keypad-with-a-raspberry-pi-4 
+#Code Reference 
+#https://maker.pro/raspberry-pi/tutorial/how-to-use-a-keypad-with-a-raspberry-pi-4
+#https://www.youtube.com/watch?v=xHDT4CwjUQE
 
 
 
